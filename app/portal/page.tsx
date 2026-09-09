@@ -94,7 +94,7 @@ export default function PatientPortal() {
                 رقم الملف: #{patientId || '10459'}
               </span>
               <h1 className="text-3xl md:text-4xl font-black mt-4">أهلاً بك، محمد علي أحمد</h1>
-              <p className="text-blue-100 mt-2 text-sm md:text-base">سجل المتابعة الصحية الخاص بك في المستشفى الأوربي الحديث الحديث</p>
+              <p className="text-blue-100 mt-2 text-sm md:text-base">سجل المتابعة الصحية الخاص بك في المستشفى الأوربي الحديث</p>
             </div>
             
             <div className="relative z-10 bg-white/10 p-5 rounded-2xl border border-white/20 text-center backdrop-blur-md w-full md:w-auto">

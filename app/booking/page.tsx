@@ -1,8 +1,10 @@
 'use client';
 import { useState } from 'react';
+import { supabase } from '../../lib/supabase'; // تم إضافة استدعاء قاعدة البيانات هنا
 
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // أضفنا هذه لمنع الضغط المتكرر
   const [formData, setFormData] = useState({
     patientName: '',
     phone: '',
@@ -12,9 +14,33 @@ export default function BookingPage() {
     notes: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // تم تحويل الدالة لتكون async لتتمكن من الاتصال بقاعدة البيانات
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    // إرسال البيانات إلى جدول الحجوزات في Supabase
+    const { error } = await supabase
+      .from('appointments')
+      .insert([
+        {
+          patient_name: formData.patientName,
+          phone: formData.phone,
+          department: formData.department,
+          doctor_name: formData.doctor,
+          // ملاحظة: إذا أردت حفظ التاريخ والملاحظات، يجب عليك إضافة أعمدة جديدة 
+          // في جدول Supabase باسم (appointment_date) و (notes)
+        }
+      ]);
+
+    setIsSubmitting(false);
+
+    if (error) {
+      console.error("خطأ في الإرسال:", error);
+      alert("حدث خطأ أثناء إرسال الحجز، يرجى المحاولة مرة أخرى.");
+    } else {
+      setSubmitted(true); // إذا نجح الإرسال، نعرض رسالة النجاح الخاصة بك
+    }
   };
 
   return (
@@ -60,10 +86,13 @@ export default function BookingPage() {
               </div>
               <h3 className="text-2xl font-black text-slate-900 mb-2">تم استلام طلب الحجز بنجاح!</h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                شكراً لثقتك بالمستشفى الأوربي الحديث الحديث. سيقوم موظف الاستقبال بالتواصل معك على الرقم المحمول لتأكيد موعدك النهائي قريباً.
+                شكراً لثقتك بالمستشفى الأوربي الحديث. سيقوم موظف الاستقبال بالتواصل معك على الرقم المحمول لتأكيد موعدك النهائي قريباً.
               </p>
               <button 
-                onClick={() => setSubmitted(false)}
+                onClick={() => {
+                  setSubmitted(false);
+                  setFormData({...formData, patientName: '', phone: '', notes: ''}); // تفريغ الحقول بعد النجاح
+                }}
                 className="bg-[#0056B3] text-white px-8 py-3 rounded-full font-bold hover:bg-[#0a2342] shadow-lg transition"
               >
                 حجز موعد جديد
@@ -159,12 +188,13 @@ export default function BookingPage() {
 
               <button 
                 type="submit"
-                className="w-full bg-[#C21835] hover:bg-red-800 text-white font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg flex items-center justify-center gap-2 transform hover:-translate-y-1"
+                disabled={isSubmitting}
+                className="w-full bg-[#C21835] hover:bg-red-800 disabled:bg-gray-400 text-white font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg flex items-center justify-center gap-2 transform hover:-translate-y-1"
               >
-                تأكيد وإرسال طلب الحجز 📅
+                {isSubmitting ? 'جاري إرسال الحجز...' : 'تأكيد وإرسال طلب الحجز 📅'}
               </button>
               <p className="text-center text-xs text-slate-400 mt-4">
-                بضغطك على تأكيد الحجز، أنت توافق على سياسة الخصوصية لالمستشفى الأوربي الحديث الحديث
+                بضغطك على تأكيد الحجز، أنت توافق على سياسة الخصوصية لالمستشفى الأوربي الحديث
               </p>
             </form>
           )}

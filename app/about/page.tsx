@@ -52,7 +52,7 @@ export default function AboutPage() {
             ملتزمون بتقديم أفضل الخدمات الطبية
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mt-2 leading-tight">
-            عن المستشفى الأوربي الحديث الحديث
+            عن المستشفى الأوربي الحديث
           </h1>
           <p className="text-blue-100 mt-6 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
             نحن صرح طبي متكامل في قلب  العاصمة، نجمع بين الكفاءات الطبية الاستثنائية والتكنولوجيا الحديثة لنرسم معياراً جديداً للرعاية الصحية والتجميلية في اليمن.

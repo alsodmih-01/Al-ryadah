@@ -18,16 +18,16 @@ export default function SmartServicesPage() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full border-2 border-[#007A7C] flex items-center justify-center text-[#C21835] font-bold text-xl group-hover:bg-[#007A7C] group-hover:text-white transition">
+            <div className="w-10 h-10 rounded-full border-2 border-[#0056B3] flex items-center justify-center text-[#C21835] font-bold text-xl group-hover:bg-[#0056B3] group-hover:text-white transition">
               ر
             </div>
             <div>
               <h1 className="text-xl font-black text-[#C21835]">
-                مستشفى <span className="text-[#007A7C]">الريادة</span>
+                المستشفى <span className="text-[#0056B3]">الأوربي الحديث</span>
               </h1>
             </div>
           </a>
-          <a href="/" className="text-sm font-bold text-[#007A7C] hover:text-[#C21835] transition flex items-center gap-1">
+          <a href="/" className="text-sm font-bold text-[#0056B3] hover:text-[#C21835] transition flex items-center gap-1">
             العودة للرئيسية &larr;
           </a>
         </div>
@@ -35,14 +35,14 @@ export default function SmartServicesPage() {
 
       <main className="pb-20">
         {/* قسم الترحيب للخدمات الذكية */}
-        <section className="bg-[#007A7C] text-white py-12 px-4 mb-10 relative overflow-hidden">
+        <section className="bg-[#0056B3] text-white py-12 px-4 mb-10 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm border border-white/30 mb-4 inline-block">
               ابتكار طبي لخدمتك
             </span>
             <h2 className="text-3xl md:text-5xl font-black mb-4">الخدمات الطبية الذكية</h2>
-            <p className="text-teal-100 text-lg max-w-2xl mx-auto">
+            <p className="text-blue-100 text-lg max-w-2xl mx-auto">
               مجموعة من الأدوات التفاعلية المصممة خصيصاً لمساعدتك في متابعة صحتك وصحة عائلتك بكل سهولة من أي مكان.
             </p>
           </div>
