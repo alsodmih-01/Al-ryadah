@@ -54,31 +54,36 @@ export default function DoctorsPage() {
       {/* شريط التنقل */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full border-2 border-[#007A7C] flex items-center justify-center text-[#C21835] font-bold text-xl group-hover:bg-[#007A7C] group-hover:text-white transition">
-              ر
-            </div>
+          
+          {/* تم التعديل هنا لسحب الشعار من مجلد public/images */}
+          <a href="/" className="flex items-center gap-2 md:gap-3 group">
+            <img 
+              src="/images/logo.png" 
+              alt="شعار المستشفى الأوربي الحديث" 
+              className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform group-hover:scale-105"
+            />
             <div>
-              <h1 className="text-xl font-black text-[#C21835]">
-                مستشفى <span className="text-[#007A7C]">الريادة</span>
+              <h1 className="text-xl md:text-2xl font-black text-[#C21835]">
+                المستشفى <span className="text-[#0056B3]">الأوربي الحديث</span>
               </h1>
             </div>
           </a>
-          <a href="/" className="text-sm font-bold text-[#007A7C] hover:text-[#C21835] transition flex items-center gap-1">
+
+          <a href="/" className="text-sm font-bold text-[#0056B3] hover:text-[#C21835] transition flex items-center gap-1">
             العودة للرئيسية &larr;
           </a>
         </div>
       </header>
 
       {/* عنوان الصفحة */}
-      <section className="bg-gradient-to-l from-[#007A7C] to-[#0c2f25] text-white py-16 px-4 text-center relative overflow-hidden">
+      <section className="bg-gradient-to-l from-[#0056B3] to-[#0a2342] text-white py-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
         <div className="relative z-10">
           <span className="bg-white/20 px-4 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm border border-white/30 mb-4 inline-block">
             نخبة الكادر الطبي
           </span>
-          <h1 className="text-3xl md:text-5xl font-black mt-2">أطباء واستشاريو المستشفى</h1>
-          <p className="text-teal-100 mt-4 text-lg">تعرف على كادرنا الطبي المتميز في المستشفى العام ومركز الجلدية والتجميل</p>
+          <h1 className="text-3xl md:text-5xl font-black mt-2">أطباء واستشاريو الالمستشفى</h1>
+          <p className="text-blue-100 mt-4 text-lg">تعرف على كادرنا الطبي المتميز في الالمستشفى العام ومركز الجلدية والتجميل</p>
         </div>
       </section>
 
@@ -86,15 +91,15 @@ export default function DoctorsPage() {
       <section className="py-16 max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {doctorsList.map((doc, index) => (
-            <div key={index} className={`bg-white rounded-3xl shadow-sm border ${doc.isCosmetic ? 'border-[#D4AF37]/40 hover:shadow-[#D4AF37]/20' : 'border-slate-200 hover:shadow-teal-900/10'} overflow-hidden hover:-translate-y-2 transition duration-300 flex flex-col justify-between`}>
+            <div key={index} className={`bg-white rounded-3xl shadow-sm border ${doc.isCosmetic ? 'border-[#D4AF37]/40 hover:shadow-[#D4AF37]/20' : 'border-slate-200 hover:shadow-blue-900/10'} overflow-hidden hover:-translate-y-2 transition duration-300 flex flex-col justify-between`}>
               <div className="p-6 text-center">
-                <div className={`w-24 h-24 text-4xl rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner border ${doc.isCosmetic ? 'bg-[#0c2f25] text-[#D4AF37] border-[#D4AF37]/50' : 'bg-teal-50 text-[#007A7C] border-teal-100'}`}>
+                <div className={`w-24 h-24 text-4xl rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner border ${doc.isCosmetic ? 'bg-[#0a2342] text-[#D4AF37] border-[#D4AF37]/50' : 'bg-blue-50 text-[#0056B3] border-blue-100'}`}>
                   {doc.image}
                 </div>
-                <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${doc.isCosmetic ? 'text-[#0c2f25] bg-[#D4AF37]/20 border-[#D4AF37]' : 'text-[#007A7C] bg-teal-50 border-teal-100'}`}>
+                <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${doc.isCosmetic ? 'text-[#0a2342] bg-[#D4AF37]/20 border-[#D4AF37]' : 'text-[#0056B3] bg-blue-50 border-blue-100'}`}>
                   {doc.department}
                 </span>
-                <h3 className={`text-xl font-black mt-4 ${doc.isCosmetic ? 'text-[#0c2f25]' : 'text-slate-900'}`}>
+                <h3 className={`text-xl font-black mt-4 ${doc.isCosmetic ? 'text-[#0a2342]' : 'text-slate-900'}`}>
                   {doc.name}
                 </h3>
                 <p className="text-slate-500 text-sm mt-2 leading-relaxed h-10">{doc.specialty}</p>
@@ -111,7 +116,7 @@ export default function DoctorsPage() {
                 </div>
                 <a 
                   href="/booking" 
-                  className={`block text-center w-full font-bold py-3 rounded-xl transition shadow-md ${doc.isCosmetic ? 'bg-[#D4AF37] hover:bg-[#b8935a] text-[#0c2f25]' : 'bg-[#C21835] hover:bg-red-800 text-white'}`}
+                  className={`block text-center w-full font-bold py-3 rounded-xl transition shadow-md ${doc.isCosmetic ? 'bg-[#D4AF37] hover:bg-[#b8935a] text-[#0a2342]' : 'bg-[#C21835] hover:bg-red-800 text-white'}`}
                 >
                   احجز موعداً مع الطبيب
                 </a>
