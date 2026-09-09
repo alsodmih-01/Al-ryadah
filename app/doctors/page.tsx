@@ -3,49 +3,85 @@ import React from 'react';
 export default function DoctorsPage() {
   const doctorsList = [
     {
-      name: "د. محمد الشميري",
-      specialty: "استشاري جراحة الكلى والمسالك البولية",
-      department: "مركز جراحة الإحليل والتشوهات",
-      image: "👨‍⚕️",
+      name: "أ.د/ عبدالله يحيى الأسطى",
+      specialty: "استشاري أول جراحة المخ والأعصاب والعمود الفقري وأورام الغدة النخامية والدماغ",
+      department: "جراحة المخ والأعصاب",
+      image: "🧠",
       days: "من السبت إلى الخميس",
-      time: "دوام كامل",
+      time: "حسب الموعد",
       isCosmetic: false
     },
     {
-      name: "د. أحمد الوشلي",
-      specialty: "استشاري أمراض وجراحة القلب",
-      department: "مركز القلب والقسطرة",
-      image: "🫀",
-      days: "السبت - الإثنين - الأربعاء",
-      time: "09:00 ص - 01:00 م",
+      name: "د/ بسام فؤاد عبدالله الصلوي",
+      specialty: "استشاري أمراض الباطنة العامة وأمراض الصدر والرئة والتدرن",
+      department: "قسم الأمراض الباطنية",
+      image: "🩺",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
       isCosmetic: false
     },
     {
-      name: "د. فاطمة العنسي",
-      specialty: "أخصائية الأطفال وحديثي الولادة",
+      name: "د/ عيسى خالد القدسي",
+      specialty: "أخصائي أول أمراض الباطنة العامة (أمراض الغدد الصماء، الجهاز الهضمي، المناعة والروماتيزم والدم)",
+      department: "قسم الأمراض الباطنية",
+      image: "🔬",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
+      isCosmetic: false
+    },
+    {
+      name: "د/ عقيل مطهر الشامي",
+      specialty: "استشاري الأمراض الباطنية والكبد والمناظير وأورام القنوات الصفراوية",
+      department: "قسم الأمراض الباطنية",
+      image: "🩺",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
+      isCosmetic: false
+    },
+    {
+      name: "د/ أحمد محمد البحيري",
+      specialty: "أخصائي أمراض باطنة وكبد ومناظير الجهاز الهضمي العلوي والسفلي",
+      department: "قسم الأمراض الباطنية",
+      image: "🔬",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
+      isCosmetic: false
+    },
+    {
+      name: "د/ محمد عبده المخلافي",
+      specialty: "استشاري أمراض المخ والأعصاب والاضطرابات العصبية",
+      department: "قسم المخ والأعصاب",
+      image: "🧠",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
+      isCosmetic: false
+    },
+    {
+      name: "د/ عبدالرحمن عبدالله بابقي",
+      specialty: "استشاري جراحة العظام والمفاصل ومناظير المفاصل والأربطة والإصابات الرياضية",
+      department: "جراحة العظام والمفاصل",
+      image: "🦴",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
+      isCosmetic: false
+    },
+    {
+      name: "د/ عادل عبدالرحمن الكريبي",
+      specialty: "أخصائي أول جراحة المخ والأعصاب (الجراحة طفيفة الأثر بالمجهر)",
+      department: "جراحة المخ والأعصاب",
+      image: "🔬",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
+      isCosmetic: false
+    },
+    {
+      name: "د/ محمد عبده علي عقلان",
+      specialty: "استشاري طب الأطفال وحديثي الولادة والخدج وأمراض الدم للأطفال",
       department: "قسم الأطفال والحضانات",
-      image: "👩‍⚕️",
-      days: "الأحد - الثلاثاء - الخميس",
-      time: "02:00 م - 06:00 م",
+      image: "👶",
+      days: "من السبت إلى الخميس",
+      time: "حسب الموعد",
       isCosmetic: false
-    },
-    {
-      name: "د. محمد الهيثمي",
-      specialty: "استشاري الجلدية والتجميل وزراعة الشعر",
-      department: "مركز الجلدية والتجميل",
-      image: "✨",
-      days: "يومياً عدا الجمعة",
-      time: "10:00 ص - 08:00 م",
-      isCosmetic: true
-    },
-    {
-      name: "د. أروى المذحجي",
-      specialty: "أخصائية التجميل غير الجراحي وليزر البشرة",
-      department: "مركز الجلدية والتجميل",
-      image: "🌸",
-      days: "السبت - الثلاثاء - الخميس",
-      time: "01:00 م - 07:00 م",
-      isCosmetic: true
     }
   ];
 
@@ -55,7 +91,6 @@ export default function DoctorsPage() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           
-          {/* تم التعديل هنا لسحب الشعار من مجلد public/images */}
           <a href="/" className="flex items-center gap-2 md:gap-3 group">
             <img 
               src="/images/logo.png" 
@@ -82,8 +117,8 @@ export default function DoctorsPage() {
           <span className="bg-white/20 px-4 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm border border-white/30 mb-4 inline-block">
             نخبة الكادر الطبي
           </span>
-          <h1 className="text-3xl md:text-5xl font-black mt-2">أطباء واستشاريو الالمستشفى</h1>
-          <p className="text-blue-100 mt-4 text-lg">تعرف على كادرنا الطبي المتميز في الالمستشفى العام ومركز الجلدية والتجميل</p>
+          <h1 className="text-3xl md:text-5xl font-black mt-2">أطباء واستشاريو المستشفى</h1>
+          <p className="text-blue-100 mt-4 text-lg">تعرف على نخبة استشاريي وأخصائيي المستشفى الأوربي الحديث</p>
         </div>
       </section>
 
@@ -102,7 +137,7 @@ export default function DoctorsPage() {
                 <h3 className={`text-xl font-black mt-4 ${doc.isCosmetic ? 'text-[#0a2342]' : 'text-slate-900'}`}>
                   {doc.name}
                 </h3>
-                <p className="text-slate-500 text-sm mt-2 leading-relaxed h-10">{doc.specialty}</p>
+                <p className="text-slate-500 text-sm mt-2 leading-relaxed h-14 overflow-hidden">{doc.specialty}</p>
               </div>
               
               <div className="bg-slate-50 p-5 border-t border-slate-100 text-sm text-slate-600">

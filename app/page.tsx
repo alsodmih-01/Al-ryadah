@@ -2,10 +2,76 @@ import React from 'react';
 
 export default function AlReyadaHospital() {
   const departments = [
-    { title: "مركز القلب والقسطرة", desc: "رعاية آمنة ودقيقة", icon: "🫀", color: "text-[#0056B3]", bg: "bg-[#0056B3]/10" },
-    { title: "جراحة الإحليل والمسالك", desc: "إشراف د/ محمد الشميري", icon: "🔬", color: "text-[#0056B3]", bg: "bg-[#0056B3]/10" },
-    { title: "قسم الأطفال والحضانات", desc: "رعاية متكاملة لحديثي الولادة", icon: "👶", color: "text-[#0056B3]", bg: "bg-[#0056B3]/10" },
-    { title: "قسم العلاج الطبيعي", desc: "استعادة الحركة وتقليل الألم", icon: "🏃‍♂️", color: "text-[#0056B3]", bg: "bg-[#0056B3]/10" },
+    { 
+      title: "قسم جراحة المخ والأعصاب", 
+      desc: "يقدم خدمات تشخيصية وعلاجية متقدمة لجراحات الدماغ، الحبل الشوكي، وأورام الغدة النخامية.", 
+      icon: "🧠", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "وحدة القسطرة والعناية القلبية", 
+      desc: "مخصصة لرعاية مرضى القلب وإجراء عمليات القسطرة التشخيصية والعلاجية، إلى جانب العناية المركزة للقلب.", 
+      icon: "🫀", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم الأطفال والخُدّج", 
+      desc: "يوفر رعاية طبية متكاملة لحديثي الولادة والأطفال والخدج بإشراف استشاريين متخصصين.", 
+      icon: "👶", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم النساء والولادة", 
+      desc: "يقدم الرعاية الشاملة للحوامل، متابعة الحمل، وعمليات الولادة المختلفة.", 
+      icon: "🤰", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم الباطنية", 
+      desc: "يضم تخصصات دقيقة تشمل أمراض الجهاز الهضمي والكبد، مناظير الجهاز الهضمي العلوي والسفلي، الأمراض الصدرية، والغدد الصماء.", 
+      icon: "🩺", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم الطوارئ", 
+      desc: "يعمل على مدار الساعة لاستقبال الحالات الحرجة والإسعافات الأولية.", 
+      icon: "🚨", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم العظام والمفاصل", 
+      desc: "يختص بعلاج الإصابات الرياضية، جراحات العظام والمفاصل، ومناظير المفاصل.", 
+      icon: "🦴", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم الأنف والأذن والحنجرة", 
+      desc: "يقدم استشارات وعلاجات وجراحات أمراض الأذن والأنف والحنجرة.", 
+      icon: "👂", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم المختبرات", 
+      desc: "مجهز بأحدث الأجهزة الطبية الحديثة لإجراء الفحوصات التشخيصية بدقة عالية.", 
+      icon: "🔬", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "قسم الأشعة التشخيصية", 
+      desc: "يضم تقنيات التصوير الطبي المتطورة للمساعدة في التشخيص الدقيق.", 
+      icon: "🩻", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
   ];
 
   // روابط وسائل التواصل بألوانها الرسمية
@@ -15,12 +81,6 @@ export default function AlReyadaHospital() {
       href: "https://www.facebook.com/share/1Et8EPFxhC/", 
       icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" /></svg>,
       colorClass: "text-[#1877F2] hover:shadow-[#1877F2]/50" 
-    },
-    { 
-      name: "WhatsApp", 
-      href: "#", 
-      icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M12.031 0C5.394 0 .013 5.38.01 12.016c-.002 2.122.553 4.195 1.606 6.02L.034 23.98l6.096-1.597a11.96 11.96 0 0 0 5.897 1.547h.005c6.634 0 12.015-5.382 12.018-12.02.002-3.218-1.248-6.244-3.523-8.52A11.967 11.967 0 0 0 12.03 0zm0 1.996c2.684.001 5.206 1.047 7.104 2.946a10.007 10.007 0 0 1 2.936 7.078c-.002 5.535-4.507 10.038-10.045 10.038a9.972 9.972 0 0 1-5.11-1.408l-.366-.217-3.8.996 1.014-3.702-.238-.378a10.008 10.008 0 0 1-1.533-5.33c.002-5.536 4.507-10.037 10.04-10.037zm5.666 14.542c-.237.674-1.393 1.285-1.95 1.367-.534.078-1.157.107-1.85-.113-.42-.133-.96-.307-1.65-.605-2.92-1.265-4.825-4.22-4.97-4.415-.145-.196-1.187-1.58-1.187-3.013 0-1.433.748-2.138 1.012-2.428.263-.29.57-.363.76-.363.19 0 .38.003.55.01.173.007.406-.065.635.485.237.57.808 1.97.88 2.115.07.146.12.316.025.507-.095.19-.143.31-.285.474-.143.166-.302.353-.432.486-.142.146-.293.308-.13.59.162.282.72 1.196 1.556 1.936.966.858 1.867 1.127 2.15 1.27.283.143.45.12.617-.07.168-.19.72-1.026.91-1.378.19-.352.38-.295.642-.196.262.1 1.662.784 1.947.927.285.143.475.215.546.335.07.12.07.697-.167 1.37z"/></svg>,
-      colorClass: "text-[#25D366] hover:shadow-[#25D366]/50"
     },
     { 
       name: "Instagram", 
@@ -42,7 +102,7 @@ export default function AlReyadaHospital() {
       <div className="bg-[#0056B3] text-white text-[11px] md:text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex gap-4">
-            <span>📍 العاصمة - جولة المثلث - غرب الاستاد الرياضي</span>
+            <span>📍 العاصمة -شارع الستين الغربي</span>
           </div>
           <div className="hidden md:flex gap-4 font-bold" dir="ltr">
             <span>📞 774778805</span>
@@ -74,6 +134,7 @@ export default function AlReyadaHospital() {
             <a href="/about" className="hover:text-[#C21835] transition">عن المستشفى</a>
             <a href="#departments" className="hover:text-[#C21835] transition">الأقسام والمراكز</a>
             <a href="/doctors" className="hover:text-[#C21835] transition">نخبة الأطباء</a>
+            <a href="/services" className="hover:text-[#C21835] transition">الخدمات الذكية</a>
           </nav>
 
           <a href="/booking" className="hidden sm:inline-block bg-[#C21835] hover:bg-red-800 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full font-bold shadow-lg transition transform hover:scale-105 order-2 md:order-3">
@@ -85,7 +146,7 @@ export default function AlReyadaHospital() {
       {/* القسم الرئيسي */}
       <section className="relative bg-[#0056B3] overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-10 md:pb-0">
         
-        {/* التعديل هنا: استخدام صورة المبنى كخلفية كاملة للقسم مع تأثير تدرج لوني لتوضيح النص */}
+        {/* استخدام صورة المبنى كخلفية كاملة للقسم مع تأثير تدرج لوني لتوضيح النص */}
         <div className="absolute inset-0 bg-[url('/images/the_building.png')] bg-cover bg-center opacity-40 mix-blend-luminosity"></div>
         <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#0056B3] via-[#0056B3]/80 to-[#0056B3]/10"></div>
 
@@ -110,6 +171,9 @@ export default function AlReyadaHospital() {
               </a>
               <a href="/booking" className="inline-block bg-white text-[#0056B3] hover:bg-slate-100 font-bold px-6 py-2.5 md:px-8 md:py-3.5 rounded-full shadow-lg transition border border-transparent text-center text-sm md:text-base">
                 بوابة المريض
+              </a>
+              <a href="/services" className="inline-block bg-[#D4AF37] text-[#0a2342] hover:bg-[#b8935a] font-bold px-6 py-2.5 md:px-8 md:py-3.5 rounded-full shadow-lg transition border border-transparent text-center text-sm md:text-base">
+                الخدمات الذكية 🚀
               </a>
             </div>
 
@@ -137,14 +201,16 @@ export default function AlReyadaHospital() {
 
       {/* الأقسام الطبية البارزة */}
       <section id="departments" className="py-12 md:py-20 max-w-7xl mx-auto px-4 -mt-6 md:-mt-16 relative z-30">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {departments.map((dept, idx) => (
-            <div key={idx} className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-xl border border-slate-100 hover:-translate-y-2 transition duration-300 text-right">
-              <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl ${dept.bg} flex items-center justify-center text-3xl mb-4`}>
-                {dept.icon}
+            <div key={idx} className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-xl border border-slate-100 hover:-translate-y-2 transition duration-300 text-right flex flex-col justify-between">
+              <div>
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl ${dept.bg} flex items-center justify-center text-3xl mb-4`}>
+                  {dept.icon}
+                </div>
+                <h3 className={`text-lg md:text-xl font-black ${dept.color} mb-2`}>{dept.title}</h3>
+                <p className="text-sm text-slate-500 font-medium leading-relaxed">{dept.desc}</p>
               </div>
-              <h3 className={`text-lg md:text-xl font-black ${dept.color} mb-2`}>{dept.title}</h3>
-              <p className="text-sm text-slate-500 font-medium">{dept.desc}</p>
             </div>
           ))}
         </div>
