@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function LiveRadar() {
   // بيانات افتراضية تعكس حالة العيادات (في النظام الحقيقي تُجلب من قاعدة البيانات)
   const clinics = [
-    { name: "مركز القلب", status: "مزدحم", color: "bg-red-500", border: "border-red-200", wait: "45 دقيقة" },
+    { name: "مركز جراحة القلب", status: "مزدحم", color: "bg-red-500", border: "border-red-200", wait: "45 دقيقة" },
     { name: "عيادة الأطفال", status: "متوسط", color: "bg-yellow-500", border: "border-yellow-200", wait: "15 دقيقة" },
-    { name: "مركز الجلدية", status: "متاح فوراً", color: "bg-green-500", border: "border-green-200", wait: "بدون انتظار" },
+    { name: "مركز الجلدية والحروق", status: "متاح فوراً", color: "bg-green-500", border: "border-green-200", wait: "بدون انتظار" },
     { name: "قسم الطوارئ", status: "أولوية للحالات الحرجة", color: "bg-[#C21835]", border: "border-red-300", wait: "24/7" },
   ];
 

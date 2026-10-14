@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const symptomsData = [
-  { id: 1, text: "ألم في الصدر أو خفقان", department: "مركز القلب والقسطرة", urgent: true },
-  { id: 2, text: "مشاكل في البشرة أو تساقط الشعر", department: "مركز الجلدية والتجميل", urgent: false },
-  { id: 3, text: "ألم في الخاصرة أو حرقان", department: "جراحة الإحليل والمسالك", urgent: false },
-  { id: 4, text: "ألم في المفاصل أو الظهر", department: "قسم العلاج الطبيعي والعظام", urgent: false },
+  { id: 1, text: "ألم في الصدر أو خفقان", department: "مركز جراحة القلب المفتوح", urgent: true },
+  { id: 2, text: "مشاكل في البشرة أو تساقط الشعر", department: "مركز الجلدية والتجميل والحروق", urgent: false },
+  { id: 3, text: "ألم في الخاصرة أو حرقان", department: "مركز جراحة الإحليل والمسالك", urgent: false },
+  { id: 4, text: "ألم في المفاصل أو الظهر", department: "العيادات الخارجية", urgent: false },
   { id: 5, text: "حمى شديدة للطفل", department: "قسم الأطفال والحضانات", urgent: true },
 ];
 

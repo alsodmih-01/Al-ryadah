@@ -3,72 +3,58 @@ import React from 'react';
 export default function AlReyadaHospital() {
   const departments = [
     { 
-      title: "قسم جراحة المخ والأعصاب", 
-      desc: "يقدم خدمات تشخيصية وعلاجية متقدمة لجراحات الدماغ، الحبل الشوكي، وأورام الغدة النخامية.", 
-      icon: "🧠", 
-      color: "text-[#0056B3]", 
-      bg: "bg-[#0056B3]/10" 
-    },
-    { 
-      title: "وحدة القسطرة والعناية القلبية", 
-      desc: "مخصصة لرعاية مرضى القلب وإجراء عمليات القسطرة التشخيصية والعلاجية، إلى جانب العناية المركزة للقلب.", 
+      title: "مركز جراحة القلب المفتوح", 
+      desc: "عمليات القلب المفتوح ورعاية مرضى القلب ضمن مركز متخصص يعمل مع أطباء القلب والباطنة.", 
       icon: "🫀", 
       color: "text-[#0056B3]", 
       bg: "bg-[#0056B3]/10" 
     },
     { 
-      title: "قسم الأطفال والخُدّج", 
-      desc: "يوفر رعاية طبية متكاملة لحديثي الولادة والأطفال والخدج بإشراف استشاريين متخصصين.", 
-      icon: "👶", 
-      color: "text-[#0056B3]", 
-      bg: "bg-[#0056B3]/10" 
-    },
-    { 
-      title: "قسم النساء والولادة", 
-      desc: "يقدم الرعاية الشاملة للحوامل، متابعة الحمل، وعمليات الولادة المختلفة.", 
-      icon: "🤰", 
-      color: "text-[#0056B3]", 
-      bg: "bg-[#0056B3]/10" 
-    },
-    { 
-      title: "قسم الباطنية", 
-      desc: "يضم تخصصات دقيقة تشمل أمراض الجهاز الهضمي والكبد، مناظير الجهاز الهضمي العلوي والسفلي، الأمراض الصدرية، والغدد الصماء.", 
+      title: "مركز جراحة الإحليل والمسالك", 
+      desc: "تقييم وجراحة الإحليل والتشوهات الخلقية والمسالك البولية للأطفال والكبار.", 
       icon: "🩺", 
       color: "text-[#0056B3]", 
       bg: "bg-[#0056B3]/10" 
     },
     { 
       title: "قسم الطوارئ", 
-      desc: "يعمل على مدار الساعة لاستقبال الحالات الحرجة والإسعافات الأولية.", 
+      desc: "استقبال على مدار الساعة لحوادث السير، إصابات القلب والصدر، الكسور، الجروح والحروق.", 
       icon: "🚨", 
       color: "text-[#0056B3]", 
       bg: "bg-[#0056B3]/10" 
     },
     { 
-      title: "قسم العظام والمفاصل", 
-      desc: "يختص بعلاج الإصابات الرياضية، جراحات العظام والمفاصل، ومناظير المفاصل.", 
-      icon: "🦴", 
+      title: "النساء والولادة والإخصاب", 
+      desc: "متابعة الحمل والولادة، مع خدمات تأخر الإنجاب والحقن المجهري عبر الاستشاريين الزائرين.", 
+      icon: "🤰", 
       color: "text-[#0056B3]", 
       bg: "bg-[#0056B3]/10" 
     },
     { 
-      title: "قسم الأنف والأذن والحنجرة", 
-      desc: "يقدم استشارات وعلاجات وجراحات أمراض الأذن والأنف والحنجرة.", 
-      icon: "👂", 
+      title: "مركز الجلدية والتجميل والحروق", 
+      desc: "عناية بالبشرة، إجراءات تجميلية، وعلاج الحروق الجراحي وغير الجراحي.", 
+      icon: "✨", 
       color: "text-[#0056B3]", 
       bg: "bg-[#0056B3]/10" 
     },
     { 
-      title: "قسم المختبرات", 
-      desc: "مجهز بأحدث الأجهزة الطبية الحديثة لإجراء الفحوصات التشخيصية بدقة عالية.", 
+      title: "رعاية الأطفال", 
+      desc: "استقبال الأطفال والحالات الجراحية التخصصية ضمن منظومة المستشفى العلاجية.", 
+      icon: "👶", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "الصيدلية", 
+      desc: "صرف دوائي ومتابعة علاجية يشارك فيها كادر الصيدلة ضمن رحلة علاج المريض.", 
+      icon: "💊", 
+      color: "text-[#0056B3]", 
+      bg: "bg-[#0056B3]/10" 
+    },
+    { 
+      title: "المختبرات والأشعة", 
+      desc: "فحوصات مخبرية وتصوير تشخيصي مساند لخطة العلاج داخل المستشفى.", 
       icon: "🔬", 
-      color: "text-[#0056B3]", 
-      bg: "bg-[#0056B3]/10" 
-    },
-    { 
-      title: "قسم الأشعة التشخيصية", 
-      desc: "يضم تقنيات التصوير الطبي المتطورة للمساعدة في التشخيص الدقيق.", 
-      icon: "🩻", 
       color: "text-[#0056B3]", 
       bg: "bg-[#0056B3]/10" 
     },
@@ -78,7 +64,7 @@ export default function AlReyadaHospital() {
   const socialLinks = [
     { 
       name: "Facebook", 
-      href: "https://www.facebook.com/share/1Et8EPFxhC/", 
+      href: "https://www.facebook.com/alryadahihospital", 
       icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" /></svg>,
       colorClass: "text-[#1877F2] hover:shadow-[#1877F2]/50" 
     },
@@ -102,11 +88,12 @@ export default function AlReyadaHospital() {
       <div className="bg-[#0056B3] text-white text-[11px] md:text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex gap-4">
-            <span>📍 العاصمة -شارع الستين الغربي</span>
+            <span>📍 ذمار – جولة المثلث – غرب الاستاد الرياضي</span>
           </div>
-          <div className="hidden md:flex gap-4 font-bold" dir="ltr">
-            <span>📞 774778805</span>
-            <span> </span>
+          <div className="flex flex-wrap gap-x-3 gap-y-1 font-bold text-[11px] md:text-sm" dir="ltr">
+            <span>📞 770751111</span>
+            <span>773303018</span>
+            <span>06-424777</span>
           </div>
         </div>
       </div>
@@ -118,14 +105,14 @@ export default function AlReyadaHospital() {
           <div className="flex items-center gap-2 md:gap-3 order-1">
             <img 
               src="/images/logo.png" 
-              alt="شعار المستشفى الأوربي الحديث" 
+              alt="شعار مستشفى الريادة الدولي" 
               className="w-12 h-12 md:w-16 md:h-16 object-contain"
             />
             <div>
               <h1 className="text-xl md:text-2xl font-black text-[#C21835]">
-                المستشفى <span className="text-[#0056B3]">الأوربي</span> الحديث
+                مستشفى <span className="text-[#0056B3]">الريادة</span> الدولي
               </h1>
-              <p className="text-[9px] md:text-xs text-slate-500 font-bold tracking-widest">— ملتزمون بتقديم أفضل الخدمات الطبية —</p>
+              <p className="text-[9px] md:text-xs text-slate-500 font-bold tracking-widest">— ملتزمون بالريادة —</p>
             </div>
           </div>
           
@@ -153,7 +140,7 @@ export default function AlReyadaHospital() {
         <div className="relative max-w-7xl mx-auto px-4 flex justify-start z-20">
           <div className="relative w-full md:w-3/5 lg:w-1/2 text-white pb-10 md:pb-32 lg:pb-40 text-right">
             <span className="bg-white/20 text-white px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm font-bold backdrop-blur-sm border border-white/30 inline-block">
-              صرح طبي متكامل في قلب العاصمة
+              صرح طبي متكامل في قلب ذمار
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mt-5 md:mt-6 leading-tight">
               رعاية صحية <br />
@@ -220,7 +207,7 @@ export default function AlReyadaHospital() {
       <section className="py-8 md:py-16 max-w-7xl mx-auto px-4">
         <div className="bg-gradient-to-br from-[#0a2342] to-[#143d70] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-[#D4AF37]/30">
           <div className="p-8 md:p-14 md:w-1/2 flex flex-col justify-center text-right">
-            <span className="text-[#D4AF37] font-bold text-sm md:text-lg tracking-wider mb-2">✦ مركز الأوربي الحديث للجلدية والتجميل</span>
+            <span className="text-[#D4AF37] font-bold text-sm md:text-lg tracking-wider mb-2">✦ مركز الريادة للجلدية والتجميل والحروق</span>
             <h2 className="text-2xl md:text-5xl font-black text-white leading-tight">
               جسمك يستاهل إهتمامك، <br />
               <span className="text-[#D4AF37]">إبدأ الخطوة الصح.</span>
@@ -241,7 +228,13 @@ export default function AlReyadaHospital() {
       <footer className="bg-[#0a2342] text-slate-300 py-8 border-t border-[#D4AF37]/20 mt-16 text-center">
         <div className="max-w-7xl mx-auto px-4">
           <p className="text-sm md:text-base font-medium">
-            جميع الحقوق محفوظة © 2026 <span className="text-white font-bold">المستشفى الأوربي الحديث</span>
+            جميع الحقوق محفوظة © 2026 <span className="text-white font-bold">مستشفى الريادة الدولي</span>
+          </p>
+          <p className="text-sm text-slate-200 mt-3" dir="ltr">
+            ذمار – جولة المثلث – غرب الاستاد الرياضي · 770751111 · 773303018 · 06-424777
+          </p>
+          <p className="text-sm text-slate-300 mt-1">
+            alryadah.hospital@gmail.com
           </p>
           <p className="text-xs md:text-sm text-[#D4AF37] mt-2 font-bold tracking-wide">
             تصميم وتطوير وبرمجة: <span className="underline">Hesham Al-sodmi</span>

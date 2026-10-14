@@ -23,7 +23,7 @@ export default function SmartServicesPage() {
             </div>
             <div>
               <h1 className="text-xl font-black text-[#C21835]">
-                المستشفى <span className="text-[#0056B3]">الأوربي الحديث</span>
+                مستشفى <span className="text-[#0056B3]">الريادة</span> الدولي
               </h1>
             </div>
           </a>

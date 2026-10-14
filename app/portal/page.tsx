@@ -24,7 +24,7 @@ export default function PatientPortal() {
             </div>
             <div>
               <h1 className="text-xl font-black text-[#C21835]">
-                المستشفى <span className="text-[#0056B3]">الأوربي الحديث</span>
+                مستشفى <span className="text-[#0056B3]">الريادة</span> الدولي
               </h1>
             </div>
           </a>
@@ -58,7 +58,7 @@ export default function PatientPortal() {
             </div>
             <h1 className="text-2xl font-black text-slate-900 mb-2">بوابة المريض الرقمية</h1>
             <p className="text-slate-500 text-sm mb-8 leading-relaxed">
-              أدخل رقم الملف الطبي أو رقم الجوال المسجل لدينا لعرض ملفك الصحي وسجل زياراتك لالمستشفى الأوربي الحديث.
+              أدخل رقم الملف الطبي أو رقم الجوال المسجل لدينا لعرض ملفك الصحي وسجل زياراتك في مستشفى الريادة الدولي.
             </p>
             
             <form onSubmit={handleLogin} className="space-y-5 text-right">
@@ -94,7 +94,7 @@ export default function PatientPortal() {
                 رقم الملف: #{patientId || '10459'}
               </span>
               <h1 className="text-3xl md:text-4xl font-black mt-4">أهلاً بك، محمد علي أحمد</h1>
-              <p className="text-blue-100 mt-2 text-sm md:text-base">سجل المتابعة الصحية الخاص بك في المستشفى الأوربي الحديث</p>
+              <p className="text-blue-100 mt-2 text-sm md:text-base">سجل المتابعة الصحية الخاص بك في مستشفى الريادة الدولي</p>
             </div>
             
             <div className="relative z-10 bg-white/10 p-5 rounded-2xl border border-white/20 text-center backdrop-blur-md w-full md:w-auto">
@@ -113,9 +113,9 @@ export default function PatientPortal() {
               <div className="space-y-4">
                 <div className="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 hover:shadow-md transition">
                   <div className="text-xs font-bold text-[#0056B3] mb-2 px-3 py-1 bg-white rounded-full inline-block shadow-sm">
-                    مركز القلب والقسطرة
+                    مركز جراحة القلب المفتوح
                   </div>
-                  <div className="font-black text-slate-900 text-lg">د. أحمد الوشلي</div>
+                  <div className="font-black text-slate-900 text-lg">د. أحمد رمضان</div>
                   <div className="text-sm text-slate-500 mt-3 flex items-center gap-2 font-medium">
                     <span>⏱️</span> السبت، 05 سبتمبر 2026 - 10:00 ص
                   </div>
@@ -145,19 +145,19 @@ export default function PatientPortal() {
                   <tbody className="divide-y divide-slate-50">
                     <tr className="hover:bg-slate-50 transition">
                       <td className="py-4 pr-2 font-black text-slate-900">2026/08/20</td>
-                      <td className="py-4 text-slate-600 font-medium">مركز الجلدية والتجميل</td>
-                      <td className="py-4 text-slate-600 font-medium">د. محمد الهيثمي</td>
+                      <td className="py-4 text-slate-600 font-medium">مركز الجلدية والتجميل والحروق</td>
+                      <td className="py-4 text-slate-600 font-medium">عيادة الجلدية</td>
                       <td className="py-4 text-center"><span className="bg-emerald-50 text-emerald-600 border border-emerald-200 px-3 py-1 rounded-lg text-xs font-bold">مكتملة</span></td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
                       <td className="py-4 pr-2 font-black text-slate-900">2026/07/15</td>
-                      <td className="py-4 text-slate-600 font-medium">قسم الأطفال</td>
-                      <td className="py-4 text-slate-600 font-medium">د. فاطمة العنسي</td>
+                      <td className="py-4 text-slate-600 font-medium">رعاية الأطفال</td>
+                      <td className="py-4 text-slate-600 font-medium">عيادة الأطفال</td>
                       <td className="py-4 text-center"><span className="bg-emerald-50 text-emerald-600 border border-emerald-200 px-3 py-1 rounded-lg text-xs font-bold">مكتملة</span></td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition">
                       <td className="py-4 pr-2 font-black text-slate-900">2025/11/05</td>
-                      <td className="py-4 text-slate-600 font-medium">جراحة المسالك البولية</td>
+                      <td className="py-4 text-slate-600 font-medium">مركز جراحة الإحليل والمسالك</td>
                       <td className="py-4 text-slate-600 font-medium">د. محمد الشميري</td>
                       <td className="py-4 text-center"><span className="bg-emerald-50 text-emerald-600 border border-emerald-200 px-3 py-1 rounded-lg text-xs font-bold">مكتملة</span></td>
                     </tr>

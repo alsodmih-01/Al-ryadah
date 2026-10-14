@@ -8,7 +8,7 @@ export default function BookingPage() {
   const [formData, setFormData] = useState({
     patientName: '',
     phone: '',
-    department: 'المستشفى العام',
+    department: 'قسم الطوارئ',
     doctor: 'غير محدد',
     date: '',
     notes: ''
@@ -54,7 +54,7 @@ export default function BookingPage() {
             </div>
             <div>
               <h1 className="text-xl font-black text-[#C21835]">
-                المستشفى <span className="text-[#0056B3]">الأوربي الحديث</span>
+                مستشفى <span className="text-[#0056B3]">الريادة</span> الدولي
               </h1>
             </div>
           </a>
@@ -72,7 +72,7 @@ export default function BookingPage() {
             بوابة المريض الرقمية
           </span>
           <h1 className="text-3xl md:text-5xl font-black mt-2">حجز موعد طبي إلكتروني</h1>
-          <p className="text-blue-100 mt-4 text-lg">احجز موعدك بسهولة مع نخبة استشاريي العاصمة</p>
+          <p className="text-blue-100 mt-4 text-lg">احجز موعدك في مستشفى الريادة الدولي — ذمار، جولة المثلث</p>
         </div>
       </section>
 
@@ -86,7 +86,7 @@ export default function BookingPage() {
               </div>
               <h3 className="text-2xl font-black text-slate-900 mb-2">تم استلام طلب الحجز بنجاح!</h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                شكراً لثقتك بالمستشفى الأوربي الحديث. سيقوم موظف الاستقبال بالتواصل معك على الرقم المحمول لتأكيد موعدك النهائي قريباً.
+                شكراً لثقتك بمستشفى الريادة الدولي. سيقوم موظف الاستقبال بالتواصل معك على الرقم المحمول لتأكيد موعدك النهائي قريباً.
               </p>
               <button 
                 onClick={() => {
@@ -140,12 +140,12 @@ export default function BookingPage() {
                     value={formData.department}
                     onChange={(e) => setFormData({...formData, department: e.target.value})}
                   >
-                    <option value="المستشفى العام">المستشفى العام (باطنية، طوارئ)</option>
-                    <option value="مركز القلب والقسطرة">مركز القلب والقسطرة</option>
-                    <option value="مركز جراحة الإحليل">مركز جراحة الإحليل والمسالك</option>
-                    <option value="قسم الأطفال والحضانات">قسم الأطفال والحضانات</option>
-                    <option value="قسم العلاج الطبيعي">قسم العلاج الطبيعي</option>
-                    <option value="مركز الجلدية والتجميل">مركز الجلدية والتجميل</option>
+                    <option value="قسم الطوارئ">قسم الطوارئ</option>
+                    <option value="مركز جراحة القلب المفتوح">مركز جراحة القلب المفتوح</option>
+                    <option value="مركز جراحة الإحليل والمسالك">مركز جراحة الإحليل والمسالك</option>
+                    <option value="النساء والولادة والإخصاب">النساء والولادة والإخصاب</option>
+                    <option value="مركز الجلدية والتجميل والحروق">مركز الجلدية والتجميل والحروق</option>
+                    <option value="رعاية الأطفال">رعاية الأطفال</option>
                   </select>
                 </div>
                 <div>
@@ -156,10 +156,9 @@ export default function BookingPage() {
                     onChange={(e) => setFormData({...formData, doctor: e.target.value})}
                   >
                     <option value="غير محدد">طبيب غير محدد (حسب توفر المواعيد)</option>
-                    <option value="د. محمد الشميري">د. محمد الشميري (استشاري جراحة المسالك)</option>
-                    <option value="د. أحمد الوشلي">د. أحمد الوشلي (استشاري أمراض القلب)</option>
-                    <option value="د. فاطمة العنسي">د. فاطمة العنسي (أخصائية الأطفال)</option>
-                    <option value="د. محمد الهيثمي">د. محمد الهيثمي (مركز التجميل)</option>
+                    <option value="د. محمد الشميري">د. محمد الشميري (استشاري جراحة المسالك والإحليل)</option>
+                    <option value="د. أحمد رمضان">د. أحمد رمضان (جراحة القلب المفتوح)</option>
+                    <option value="د. يوليا الشرفي">د. يوليا الشرفي (الإخصاب والحقن المجهري — زيارة)</option>
                   </select>
                 </div>
               </div>
@@ -194,7 +193,7 @@ export default function BookingPage() {
                 {isSubmitting ? 'جاري إرسال الحجز...' : 'تأكيد وإرسال طلب الحجز 📅'}
               </button>
               <p className="text-center text-xs text-slate-400 mt-4">
-                بضغطك على تأكيد الحجز، أنت توافق على سياسة الخصوصية لالمستشفى الأوربي الحديث
+                بضغطك على تأكيد الحجز، أنت توافق على سياسة الخصوصية لمستشفى الريادة الدولي
               </p>
             </form>
           )}

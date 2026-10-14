@@ -120,7 +120,7 @@ export default function PregnancyTracker() {
               <p className="text-xl font-black text-slate-700 mb-4">{data.milestone.size}</p>
               
               <div className="bg-blue-50 text-blue-800 p-4 rounded-xl text-sm leading-relaxed border border-blue-100">
-                <span className="font-bold block mb-1">💡 نصيحة الأوربي الطبية:</span>
+                <span className="font-bold block mb-1">💡 نصيحة الريادة الطبية:</span>
                 {data.milestone.tip}
               </div>
             </div>
