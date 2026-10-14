@@ -1,61 +1,81 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 export default function BmiCalculator() {
-  const [weight, setWeight] = useState<number | "">("");
-  const [height, setHeight] = useState<number | "">("");
-  const [result, setResult] = useState<{ bmi: string; status: string; color: string; advice: string } | null>(null);
+  const [weight, setWeight] = useState("");
+  const [height, setHeight] = useState("");
+  const [result, setResult] = useState<number | null>(null);
 
-  const calculateBmi = () => {
-    if (weight && height) {
-      const heightInMeters = height / 100;
-      const bmiValue = weight / (heightInMeters * heightInMeters);
-      const formattedBmi = bmiValue.toFixed(1);
+  const calculate = () => {
+    const w = Number(weight);
+    const h = Number(height) / 100;
 
-      if (bmiValue < 18.5) {
-        setResult({ bmi: formattedBmi, status: "نقص في الوزن", color: "text-blue-500", advice: "ننصحك بزيارة عيادة التغذية لوضع خطة صحية لزيادة الوزن." });
-      } else if (bmiValue >= 18.5 && bmiValue <= 24.9) {
-        setResult({ bmi: formattedBmi, status: "وزن مثالي", color: "text-green-500", advice: "رائع! حافظ على نمط حياتك الصحي." });
-      } else if (bmiValue >= 25 && bmiValue <= 29.9) {
-        setResult({ bmi: formattedBmi, status: "زيادة في الوزن", color: "text-yellow-500", advice: "زيارة استشاري التغذية ستساعدك في الوصول للوزن المثالي بسهولة." });
-      } else {
-        setResult({ bmi: formattedBmi, status: "سمنة", color: "text-red-600", advice: "السمنة تزيد من خطر أمراض القلب. احجز موعداً للمتابعة مع أطبائنا المتخصصين." });
-      }
-    }
+    if (!w || !h) return;
+
+    setResult(w / (h * h));
   };
 
+  let status = "";
+
+  if (result !== null) {
+    if (result < 18.5) status = "أقل من النطاق المعتاد للبالغين";
+    else if (result < 25) status = "ضمن النطاق المعتاد للبالغين";
+    else if (result < 30) status = "أعلى من النطاق المعتاد للبالغين";
+    else status = "مرتفع";
+  }
+
   return (
-    <div className="bg-white p-6 md:p-8 rounded-3xl shadow-lg border-t-4 border-[#0056B3] w-full max-w-md mx-auto" dir="rtl">
-      <h3 className="text-2xl font-bold text-[#0056B3] mb-2 text-center">اطمئن على صحتك</h3>
-      <p className="text-slate-500 text-sm text-center mb-6">حاسبة مؤشر كتلة الجسم (BMI)</p>
-      
-      <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-bold text-slate-700 mb-2">الوزن (كجم)</label>
-          <input type="number" value={weight} onChange={(e) => setWeight(Number(e.target.value))} placeholder="مثال: 75" className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-[#0056B3]" />
-        </div>
-        <div>
-          <label className="block text-sm font-bold text-slate-700 mb-2">الطول (سم)</label>
-          <input type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} placeholder="مثال: 170" className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-[#0056B3]" />
-        </div>
-        <button onClick={calculateBmi} className="w-full bg-[#0056B3] text-white font-bold py-3 rounded-xl hover:bg-blue-800 transition">
-          احسب النتيجة
-        </button>
+    <section id="calculators" dir="rtl" className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-lg md:p-8">
+      <span className="text-xs font-black text-[#0056B3]">
+        Health Calculator
+      </span>
+
+      <h3 className="mt-2 text-2xl font-black text-[#103B6D]">
+        مؤشر كتلة الجسم
+      </h3>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <input
+          type="number"
+          placeholder="الوزن كجم"
+          value={weight}
+          onChange={(e) => setWeight(e.target.value)}
+          className="rounded-2xl border border-slate-200 px-4 py-4 outline-none focus:border-[#0056B3]"
+        />
+
+        <input
+          type="number"
+          placeholder="الطول سم"
+          value={height}
+          onChange={(e) => setHeight(e.target.value)}
+          className="rounded-2xl border border-slate-200 px-4 py-4 outline-none focus:border-[#0056B3]"
+        />
       </div>
 
-      {result && (
-        <div className="mt-6 p-5 bg-slate-50 rounded-xl border border-slate-100 text-center animate-in fade-in zoom-in duration-300">
-          <p className="text-sm text-slate-600 mb-1">مؤشر كتلة الجسم الخاص بك:</p>
-          <p className={`text-4xl font-black mb-2 ${result.color}`}>{result.bmi}</p>
-          <p className={`font-bold text-lg mb-3 ${result.color}`}>{result.status}</p>
-          <p className="text-sm text-slate-600 mb-4">{result.advice}</p>
-          <Link href="/booking" className="inline-block bg-[#C21835] text-white px-6 py-2 rounded-lg font-bold hover:bg-red-800 transition text-sm">
-            احجز استشارتك الآن
-          </Link>
+      <button
+        onClick={calculate}
+        className="mt-4 w-full rounded-2xl bg-[#0056B3] py-4 font-black text-white"
+      >
+        احسب المؤشر
+      </button>
+
+      {result !== null && (
+        <div className="mt-6 rounded-[24px] bg-blue-50 p-6 text-center">
+          <div className="text-5xl font-black text-[#0056B3]">
+            {result.toFixed(1)}
+          </div>
+
+          <div className="mt-2 font-black text-[#103B6D]">
+            {status}
+          </div>
+
+          <p className="mt-3 text-xs leading-6 text-slate-500">
+            مؤشر كتلة الجسم أداة تقديرية للبالغين ولا يكفي وحده لتقييم
+            الصحة أو تكوين تشخيص.
+          </p>
         </div>
       )}
-    </div>
+    </section>
   );
 }

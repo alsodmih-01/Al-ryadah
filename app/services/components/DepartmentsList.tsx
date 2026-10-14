@@ -1,35 +1,52 @@
-import React from 'react';
+import Link from "next/link";
+
+const departments = [
+  ["جراحة المخ والأعصاب", "neurosurgery"],
+  ["القسطرة والعناية القلبية", "cardiology"],
+  ["الأطفال والخُدّج", "pediatrics"],
+  ["النساء والولادة", "obstetrics-gynecology"],
+  ["الباطنية", "internal-medicine"],
+  ["الطوارئ", "emergency"],
+  ["العظام والمفاصل", "orthopedics"],
+  ["الأنف والأذن والحنجرة", "ent"],
+  ["المختبرات", "laboratory"],
+  ["الأشعة التشخيصية", "radiology"],
+];
 
 export default function DepartmentsList() {
-  // القائمة الحقيقية الثابتة بدون الحاجة لقاعدة بيانات
-  const departments = [
-    { title: "قسم جراحة المخ والأعصاب", icon: "🧠" },
-    { title: "وحدة القسطرة والعناية القلبية", icon: "🫀" },
-    { title: "قسم الأطفال والخُدّج", icon: "👶" },
-    { title: "قسم النساء والولادة", icon: "🤰" },
-    { title: "قسم الباطنية", icon: "🩺" },
-    { title: "قسم الطوارئ", icon: "🚨" },
-    { title: "قسم العظام والمفاصل", icon: "🦴" },
-    { title: "قسم الأنف والأذن والحنجرة", icon: "👂" },
-    { title: "قسم المختبرات", icon: "🔬" },
-    { title: "قسم الأشعة التشخيصية", icon: "🩻" },
-  ];
-
   return (
-    <div className="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-[#0056B3] w-full" dir="rtl">
-      <h3 className="text-3xl font-black text-center mb-8 text-slate-900">أقسامنا ومراكزنا الطبية</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {departments.map((dept, idx) => (
-          <div key={idx} className="p-6 border border-slate-100 rounded-2xl bg-slate-50 hover:shadow-md transition flex flex-col justify-between">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#0056B3]/10 flex items-center justify-center text-2xl">
-                {dept.icon}
+    <section
+      dir="rtl"
+      className="rounded-[36px] bg-[#07182d] p-6 text-white shadow-2xl md:p-10"
+    >
+      <span className="text-xs font-black text-[#D4AF37]">
+        Department Hub
+      </span>
+
+      <h3 className="mt-2 text-3xl font-black">
+        أين تبدأ؟
+      </h3>
+
+      <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {departments.map(([title, slug], index) => (
+          <Link
+            key={slug}
+            href={`/departments/${slug}`}
+            className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
+          >
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-xs font-black text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#103B6D]">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+
+            <div className="font-black">
+              <div>{title}</div>
+              <div className="mt-1 text-xs text-blue-200">
+                استكشف القسم ←
               </div>
-              <h4 className="text-lg font-bold text-[#0056B3]">{dept.title}</h4>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,24 +1,63 @@
+import Link from "next/link";
+
+const programs = [
+  {
+    title: "متابعة السكري",
+    description: "تنظيم المعلومات والفحوصات والمتابعة مع الفريق الطبي.",
+  },
+  {
+    title: "متابعة ضغط الدم",
+    description: "دعم متابعة القراءات ومراجعتها مع المختص عند الحاجة.",
+  },
+  {
+    title: "متابعة القلب",
+    description: "تنظيم الزيارات والبيانات التي يرغب المريض في مناقشتها.",
+  },
+  {
+    title: "الرعاية طويلة المدى",
+    description: "محتوى يساعد على الاستمرار في المتابعة المنتظمة.",
+  },
+];
+
 export default function ChronicCare() {
   return (
-    <div className="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-[#0056B3] w-full" dir="rtl">
-      <h3 className="text-2xl font-black text-slate-800 mb-4 text-center">
-        برامج الرعاية المستمرة للأمراض المزمنة
+    <section dir="rtl" className="rounded-[32px] border border-blue-100 bg-white p-6 shadow-lg md:p-8">
+      <span className="text-xs font-black text-[#0056B3]">
+        Chronic Care Companion
+      </span>
+
+      <h3 className="mt-2 text-2xl font-black text-[#103B6D]">
+        الرعاية المستمرة
       </h3>
-      <p className="text-slate-600 text-center mb-6 leading-relaxed">
-        نقدم متابعة دورية واستشارات متخصصة لمرضى السكري، الضغط، والأمراض المزمنة الأخرى لضمان جودة حياة أفضل ورعاية صحية آمنة.
+
+      <p className="mt-3 text-sm leading-7 text-slate-500">
+        أدوات ومحتوى لمساعدة المريض على تنظيم المتابعة، دون أن تحل
+        محل الخطة الطبية الرسمية.
       </p>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="p-5 bg-blue-50 rounded-2xl border border-blue-100">
-          <h4 className="font-bold text-[#0056B3] mb-2 text-lg">🩺 متابعة السكري المستمرة</h4>
-          <p className="text-sm text-slate-600">برامج متكاملة لفحص السكر التراكمي، إرشادات التغذية السليمة، والمتابعة الدورية مع أخصائي الغدد.</p>
-        </div>
-        
-        <div className="p-5 bg-blue-50 rounded-2xl border border-blue-100">
-          <h4 className="font-bold text-[#0056B3] mb-2 text-lg">❤️ مراقبة ضغط الدم والقلب</h4>
-          <p className="text-sm text-slate-600">استشاريون مختصون لمتابعة ضغط الدم، تخطيط القلب، والوقاية من المضاعفات المبكرة.</p>
-        </div>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {programs.map((item) => (
+          <div
+            key={item.title}
+            className="rounded-2xl border border-blue-100 bg-blue-50 p-5"
+          >
+            <h4 className="font-black text-[#0056B3]">
+              {item.title}
+            </h4>
+
+            <p className="mt-2 text-xs leading-6 text-slate-600">
+              {item.description}
+            </p>
+          </div>
+        ))}
       </div>
-    </div>
+
+      <Link
+        href="/booking"
+        className="mt-6 flex items-center justify-center rounded-2xl bg-[#0056B3] py-4 font-black text-white"
+      >
+        ابدأ المتابعة
+      </Link>
+    </section>
   );
 }

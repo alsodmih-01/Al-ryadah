@@ -3,60 +3,100 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const symptomsData = [
-  { id: 1, text: "ألم في الصدر أو خفقان", department: "مركز القلب والقسطرة", urgent: true },
-  { id: 2, text: "مشاكل في البشرة أو تساقط الشعر", department: "مركز الجلدية والتجميل", urgent: false },
-  { id: 3, text: "ألم في الخاصرة أو حرقان", department: "جراحة الإحليل والمسالك", urgent: false },
-  { id: 4, text: "ألم في المفاصل أو الظهر", department: "قسم العلاج الطبيعي والعظام", urgent: false },
-  { id: 5, text: "حمى شديدة للطفل", department: "قسم الأطفال والحضانات", urgent: true },
+const symptoms = [
+  {
+    id: 1,
+    text: "ألم في الصدر أو خفقان",
+    department: "مركز القلب والقسطرة",
+    urgent: true,
+  },
+  {
+    id: 2,
+    text: "مشاكل في البشرة أو الشعر",
+    department: "مركز الجلدية والتجميل",
+    urgent: false,
+  },
+  {
+    id: 3,
+    text: "ألم أو حرقة أثناء التبول",
+    department: "قسم المسالك البولية",
+    urgent: false,
+  },
+  {
+    id: 4,
+    text: "ألم في المفاصل أو الظهر",
+    department: "قسم العظام والمفاصل",
+    urgent: false,
+  },
+  {
+    id: 5,
+    text: "حمى شديدة لدى طفل",
+    department: "قسم الأطفال",
+    urgent: true,
+  },
 ];
 
 export default function SymptomMatcher() {
-  const [selectedSymptom, setSelectedSymptom] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
 
-  const activeMatch = symptomsData.find(s => s.id === selectedSymptom);
+  const result = symptoms.find((item) => item.id === selected);
 
   return (
-    <div className="bg-white p-6 md:p-8 rounded-3xl shadow-lg border-t-4 border-[#C21835] w-full max-w-2xl mx-auto" dir="rtl">
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-black text-[#C21835] mb-2">الموجه الطبي الذكي</h3>
-        <p className="text-slate-500">اختر العرض الذي تعاني منه لنوجهك للقسم المختص فوراً</p>
-      </div>
+    <section dir="rtl" className="rounded-[32px] border border-red-100 bg-white p-6 shadow-[0_15px_50px_rgba(15,23,42,0.06)] md:p-8">
+      <span className="text-xs font-black text-[#C21835]">
+        Health Navigator
+      </span>
 
-      <div className="flex flex-wrap gap-3 justify-center mb-8">
-        {symptomsData.map((symptom) => (
+      <h3 className="mt-2 text-2xl font-black text-[#103B6D]">
+        موجه الأعراض
+      </h3>
+
+      <p className="mt-2 text-sm leading-7 text-slate-500">
+        استكشاف توعوي يساعدك على معرفة نقطة بداية محتملة، وليس تشخيصًا
+        طبيًا.
+      </p>
+
+      <div className="mt-6 flex flex-wrap gap-3">
+        {symptoms.map((item) => (
           <button
-            key={symptom.id}
-            onClick={() => setSelectedSymptom(symptom.id)}
-            className={`px-5 py-3 rounded-full text-sm font-bold transition-all ${
-              selectedSymptom === symptom.id 
-                ? "bg-[#007A7C] text-white shadow-md transform scale-105" 
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+            key={item.id}
+            onClick={() => setSelected(item.id)}
+            className={`rounded-2xl border px-4 py-3 text-sm font-bold transition ${
+              selected === item.id
+                ? "border-[#0056B3] bg-[#0056B3] text-white"
+                : "border-slate-200 bg-slate-50 text-slate-600 hover:bg-blue-50"
             }`}
           >
-            {symptom.text}
+            {item.text}
           </button>
         ))}
       </div>
 
-      {activeMatch && (
-        <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center animate-in slide-in-from-bottom-4 fade-in duration-300">
-          <p className="text-slate-500 text-sm mb-2">القسم الطبي الموصى به لحالتك:</p>
-          <h4 className="text-xl font-bold text-slate-800 mb-3">{activeMatch.department}</h4>
-          
-          {activeMatch.urgent && (
-            <p className="text-red-600 text-sm font-bold mb-4 bg-red-50 p-2 rounded-lg inline-block">
-              عافاك الله! نوصي بزيارة الطوارئ أو الحجز العاجل لهذه الأعراض.
-            </p>
+      {result && (
+        <div className="mt-7 rounded-[26px] bg-slate-50 p-6">
+          <div className="text-xs font-bold text-slate-400">
+            نقطة بداية تعليمية محتملة
+          </div>
+
+          <h4 className="mt-2 text-xl font-black text-[#103B6D]">
+            {result.department}
+          </h4>
+
+          {result.urgent && (
+            <div className="mt-4 rounded-2xl border border-red-100 bg-red-50 p-4 text-sm font-bold leading-7 text-red-700">
+              إذا كانت الأعراض شديدة أو مفاجئة أو مصحوبة بعلامات خطورة،
+              فلا تعتمد على هذه الأداة واطلب تقييمًا طبيًا عاجلًا.
+            </div>
           )}
 
-          <div className="mt-4">
-            <Link href="/booking" className="bg-[#C21835] hover:bg-red-800 text-white font-bold py-3 px-8 rounded-xl transition shadow-lg inline-block">
-              احجز موعدك في {activeMatch.department}
-            </Link>
-          </div>
+          <Link
+            href="/booking"
+            className="mt-5 inline-flex rounded-2xl bg-[#C21835] px-6 py-3 text-sm font-black text-white"
+          >
+            الانتقال إلى الحجز
+          </Link>
         </div>
       )}
-    </div>
+    </section>
   );
 }

@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model BloodDonor {
+  id               String   @id @default(cuid())
+  fullName         String
+  phone            String
+  bloodType        String
+  region           String
+  lastDonationDate DateTime
+  createdAt        DateTime @default(now())
+}
