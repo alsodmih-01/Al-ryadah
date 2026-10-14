@@ -3,84 +3,39 @@ import React from 'react';
 export default function DoctorsPage() {
   const doctorsList = [
     {
-      name: "أ.د/ عبدالله يحيى الأسطى",
-      specialty: "استشاري أول جراحة المخ والأعصاب والعمود الفقري وأورام الغدة النخامية والدماغ",
-      department: "جراحة المخ والأعصاب",
-      image: "🧠",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
-      isCosmetic: false
-    },
-    {
-      name: "د/ بسام فؤاد عبدالله الصلوي",
-      specialty: "استشاري أمراض الباطنة العامة وأمراض الصدر والرئة والتدرن",
-      department: "قسم الأمراض الباطنية",
+      name: "د. محمد الشميري",
+      specialty: "استشاري جراحة الكلى والمسالك البولية وجراحات الإحليل والتشوهات الخلقية",
+      department: "مركز جراحة الإحليل والمسالك",
       image: "🩺",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
+      days: "حسب الموعد",
+      time: "770751111",
       isCosmetic: false
     },
     {
-      name: "د/ عيسى خالد القدسي",
-      specialty: "أخصائي أول أمراض الباطنة العامة (أمراض الغدد الصماء، الجهاز الهضمي، المناعة والروماتيزم والدم)",
-      department: "قسم الأمراض الباطنية",
-      image: "🔬",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
+      name: "د. أحمد رمضان",
+      specialty: "جراحة القلب المفتوح، بالتعاون مع أطباء القلب والباطنة",
+      department: "مركز جراحة القلب المفتوح",
+      image: "🫀",
+      days: "حسب الموعد",
+      time: "770751111",
       isCosmetic: false
     },
     {
-      name: "د/ عقيل مطهر الشامي",
-      specialty: "استشاري الأمراض الباطنية والكبد والمناظير وأورام القنوات الصفراوية",
-      department: "قسم الأمراض الباطنية",
-      image: "🩺",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
+      name: "د. يوليا الشرفي",
+      specialty: "استشارية الإخصاب الطبي المساعد والحقن المجهري وأطفال الأنابيب — طبيبة زائرة",
+      department: "النساء والولادة والإخصاب",
+      image: "🤰",
+      days: "حسب برنامج الزيارة",
+      time: "770751111",
       isCosmetic: false
     },
     {
-      name: "د/ أحمد محمد البحيري",
-      specialty: "أخصائي أمراض باطنة وكبد ومناظير الجهاز الهضمي العلوي والسفلي",
-      department: "قسم الأمراض الباطنية",
-      image: "🔬",
+      name: "د. أكرم الحاج",
+      specialty: "مسؤول قسم الصيدلة ومتابعة الخطة الدوائية للمرضى",
+      department: "الصيدلية",
+      image: "💊",
       days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
-      isCosmetic: false
-    },
-    {
-      name: "د/ محمد عبده المخلافي",
-      specialty: "استشاري أمراض المخ والأعصاب والاضطرابات العصبية",
-      department: "قسم المخ والأعصاب",
-      image: "🧠",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
-      isCosmetic: false
-    },
-    {
-      name: "د/ عبدالرحمن عبدالله بابقي",
-      specialty: "استشاري جراحة العظام والمفاصل ومناظير المفاصل والأربطة والإصابات الرياضية",
-      department: "جراحة العظام والمفاصل",
-      image: "🦴",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
-      isCosmetic: false
-    },
-    {
-      name: "د/ عادل عبدالرحمن الكريبي",
-      specialty: "أخصائي أول جراحة المخ والأعصاب (الجراحة طفيفة الأثر بالمجهر)",
-      department: "جراحة المخ والأعصاب",
-      image: "🔬",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
-      isCosmetic: false
-    },
-    {
-      name: "د/ محمد عبده علي عقلان",
-      specialty: "استشاري طب الأطفال وحديثي الولادة والخدج وأمراض الدم للأطفال",
-      department: "قسم الأطفال والحضانات",
-      image: "👶",
-      days: "من السبت إلى الخميس",
-      time: "حسب الموعد",
+      time: "حسب الدوام",
       isCosmetic: false
     }
   ];
@@ -94,12 +49,12 @@ export default function DoctorsPage() {
           <a href="/" className="flex items-center gap-2 md:gap-3 group">
             <img 
               src="/images/logo.png" 
-              alt="شعار المستشفى الأوربي الحديث" 
+              alt="شعار مستشفى الريادة الدولي" 
               className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform group-hover:scale-105"
             />
             <div>
               <h1 className="text-xl md:text-2xl font-black text-[#C21835]">
-                المستشفى <span className="text-[#0056B3]">الأوربي الحديث</span>
+                مستشفى <span className="text-[#0056B3]">الريادة</span> الدولي
               </h1>
             </div>
           </a>
@@ -118,7 +73,7 @@ export default function DoctorsPage() {
             نخبة الكادر الطبي
           </span>
           <h1 className="text-3xl md:text-5xl font-black mt-2">أطباء واستشاريو المستشفى</h1>
-          <p className="text-blue-100 mt-4 text-lg">تعرف على نخبة استشاريي وأخصائيي المستشفى الأوربي الحديث</p>
+          <p className="text-blue-100 mt-4 text-lg">تعرّف على استشاريي وأخصائيي مستشفى الريادة الدولي في ذمار</p>
         </div>
       </section>
 

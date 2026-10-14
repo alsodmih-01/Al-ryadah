@@ -10,7 +10,7 @@ export default function AboutPage() {
 
   const values = [
     { title: "الإنسانية أولاً", desc: "نتعامل مع كل مريض كفرد من عائلتنا، ونقدم الرعاية بتعاطف واحترام بالغين.", icon: "🤝" },
-    { title: "الجودة والريادة الحديث", desc: "نلتزم بأعلى المعايير الطبية العالمية لضمان دقة التشخيص وفعالية العلاج.", icon: "⭐" },
+    { title: "الجودة والريادة", desc: "نلتزم بمعايير طبية دقيقة لضمان التشخيص والعلاج، ونعمل على تطوير الخدمة باستمرار.", icon: "⭐" },
     { title: "النزاهة والشفافية", desc: "نؤمن بأهمية المصداقية التامة مع المريض في كل خطوات رحلته العلاجية.", icon: "⚖️" },
     { title: "التطور المستمر", desc: "نواكب أحدث التقنيات والأجهزة الطبية لتقديم حلول مبتكرة وآمنة.", icon: "📈" },
   ];
@@ -26,7 +26,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h1 className="text-xl font-black text-[#C21835]">
-                المستشفى <span className="text-[#0056B3]">الأوربي الحديث</span>
+                مستشفى <span className="text-[#0056B3]">الريادة</span> الدولي
               </h1>
             </div>
           </a>
@@ -49,13 +49,13 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span className="bg-white/20 px-4 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm border border-white/30 mb-6 inline-block">
-            ملتزمون بتقديم أفضل الخدمات الطبية
+            ملتزمون بالريادة
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mt-2 leading-tight">
-            عن المستشفى الأوربي الحديث
+            عن مستشفى الريادة الدولي
           </h1>
           <p className="text-blue-100 mt-6 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            نحن صرح طبي متكامل في قلب  العاصمة، نجمع بين الكفاءات الطبية الاستثنائية والتكنولوجيا الحديثة لنرسم معياراً جديداً للرعاية الصحية والتجميلية في اليمن.
+            صرح طبي في قلب ذمار، جولة المثلث غرب الاستاد الرياضي. نجمع بين الكادر الطبي والتجهيزات الحديثة لتقديم رعاية صحية وجراحية لأهل ذمار واليمن.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function AboutPage() {
             <div className="absolute -inset-4 bg-blue-50 rounded-3xl -z-10 transform rotate-3"></div>
             <img 
               src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=1000&auto=format&fit=crop" 
-              alt="فريق المستشفى الأوربي الحديث" 
+              alt="فريق مستشفى الريادة الدولي" 
               className="rounded-3xl shadow-xl w-full object-cover h-[400px]"
             />
             <div className="absolute bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-xs hidden md:block">
