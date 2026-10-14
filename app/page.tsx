@@ -86,14 +86,12 @@ export default function AlReyadaHospital() {
     <div className="min-h-screen bg-slate-50 font-sans" dir="rtl">
       {/* الشريط العلوي */}
       <div className="bg-[#0056B3] text-white text-[11px] md:text-sm py-2">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex gap-4">
-            <span>📍 ذمار – جولة المثلث – غرب الاستاد الرياضي</span>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:justify-between">
+          <span>📍 ذمار – جولة المثلث – غرب الاستاد الرياضي</span>
           <div className="flex flex-wrap gap-x-3 gap-y-1 font-bold text-[11px] md:text-sm" dir="ltr">
-            <span>📞 770751111</span>
-            <span>773303018</span>
-            <span>06-424777</span>
+            <a href="tel:770751111" className="hover:underline">770751111</a>
+            <a href="tel:773303018" className="hover:underline">773303018</a>
+            <a href="tel:06424777" className="hover:underline">06-424777</a>
           </div>
         </div>
       </div>
